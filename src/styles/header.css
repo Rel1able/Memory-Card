@@ -1,0 +1,18 @@
+.header-container{
+    display: flex;
+    border: 2px solid;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.title-desc header{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.score-board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
