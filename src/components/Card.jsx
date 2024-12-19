@@ -1,6 +1,10 @@
-export default function Card({ character }) {
+import "../styles/main.css"
+
+export default function Card({ character, onClick }) {
+
+
     return (
-        <div className="card" key={character.name}>
+        <div onClick={onClick} className="card" key={character.name}>
             <img src={character.img} alt={character.name}/>
             <p>{character.name}</p>
         </div>

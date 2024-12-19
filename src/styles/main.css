@@ -1,15 +1,21 @@
 .main-container{
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 2rem;
-    border: 2px solid;
+    gap: 1rem;
+    background-color: rgb(156, 156, 209);
+    place-items: center;
+
 }
 
 .card{
     width: 15rem;
     border: 2px solid;
+    text-align: center;
+
 }
 
 .card img{
-    width: 100%;
+     width: 100%;
 }
