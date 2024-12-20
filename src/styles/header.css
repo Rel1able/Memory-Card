@@ -1,14 +1,21 @@
 .header-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2rem;
     background-color: rgb(25, 25, 25);
-    color: rgb(240, 87, 4);
+    color: rgb(249, 141, 40);
+    text-shadow: 1px 1px 1.5px rgb(181, 61, 6);
 }
 
 .title-desc header{
     font-size: 3rem;
     font-weight: bold;
+    
+}
+
+.title-desc p{
+    font-size: 1.3rem;
+
 }
 
 .score-board{
