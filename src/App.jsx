@@ -22,7 +22,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [characters, setCharacters] = useState([]);
-  const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271, 290];
+const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271, 290];
+
 
     const handleCardClick = (clickedCharacter) => {
     if (clickedCharacter.clicked) {
@@ -55,6 +56,7 @@ function App() {
   const getCharacters = async () => {
     try {
       const response = await fetch(`https://api.jikan.moe/v4/anime/269/characters`)
+      
       if (!response.ok) {
         throw new Error("Failed to fetch the data");
       }
@@ -62,7 +64,7 @@ function App() {
         const characterData = characterIds.map((id) => {
           const character = responseData.data[id].character
           return {
-              name: character.name,
+              name: character.name.split(",").join(" "),
               img: character.images.jpg.image_url,
               clicked: false
             }
