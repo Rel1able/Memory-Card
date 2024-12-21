@@ -3,14 +3,19 @@
     justify-content: space-around;
     padding: 2rem;
     background-color: rgb(25, 25, 25);
-    color: rgb(249, 141, 40);
-    text-shadow: 1px 1px 1.5px rgb(181, 61, 6);
+    color: rgb(228, 104, 104);
+
+
 }
 
 .title-desc header{
-    font-size: 3rem;
-    font-weight: bold;
-    
+    font-size: 4rem;
+    font-weight: bold; 
+    color: rgb(226, 38, 38);
+    text-shadow: 1px 1px 0 white,
+    -1px 1px 0 white,
+    1px -1px 0 white,
+    -1px -1px 0 white;
 }
 
 .title-desc p{

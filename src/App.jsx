@@ -1,6 +1,8 @@
 import { useState, useEffect} from "react";
 import Header from "./components/Header.jsx";
 import Card from "./components/Card.jsx";
+import DisplayVictory from "./components/Victory.jsx";
+import DisplayLose from "./components/Lose.jsx";
 import "./styles/main.css";
 
 
@@ -22,7 +24,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [characters, setCharacters] = useState([]);
-const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271, 290];
+  const [lost, setLost] = useState(false);
+  const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271, 290];
 
 
     const handleCardClick = (clickedCharacter) => {
@@ -33,6 +36,7 @@ const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271
       setCharacters(resetCharacters);
       setScore(0);
       setCharacters(prevCharacters => shuffleArr(prevCharacters));
+      setLost(true);
     } else {
       const updatedCharacters = characters.map(character => {
         if (character.name === clickedCharacter.name) {
@@ -78,19 +82,27 @@ const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271
     
   }
 
+  function playAgain() {
+    setLost(false);
+    setScore(0);
+    setCharacters(prevCharacters => shuffleArr(prevCharacters));
+  }
+
   useEffect(() => {
     getCharacters()
   }, [])
   
   return (
     <>
-      <Header score={score} bestScore={bestScore} />
-      <main className="main-container">
+      <Header score={score} bestScore={bestScore} lost={lost} />
+      <main className={score === 16 || lost ? "main-container blured" : "main-container"}>
         {characters.map((character, index) => (
-          <Card onClick={() => handleCardClick(character)} key={index}  character={character} />
+          <Card onClick={score === 16 || lost ? null : () => handleCardClick(character)} key={index}  character={character} />
         ))}
-
+        
       </main>
+      {score === 16 && <DisplayVictory playAgain={playAgain} />}
+      {lost && <DisplayLose playAgain={playAgain} />}
     </>
   )
 }

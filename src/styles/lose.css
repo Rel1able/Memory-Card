@@ -1,0 +1,19 @@
+.lose-container{
+    height: 20rem;
+    width: 30rem;
+    color: white;
+    font-size: 2rem;
+    background-color: rgb(31, 31, 31);
+    padding: 2rem;
+    padding-top: 0rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

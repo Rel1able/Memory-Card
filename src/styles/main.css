@@ -11,7 +11,6 @@
 
 .card{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(26, 26, 26);
     font-weight: bold;
     font-size: 1.5rem;
     box-sizing: border-box;
@@ -21,13 +20,20 @@
     padding: 0.5rem;
     padding-top: 1rem;
     border-radius: 4rem 0.5rem;
-    background-color: rgb(249, 141, 40);
-    text-shadow: 1px 1px 1px white;
-    transition: transform 0.25s ease;
+    
+    background: linear-gradient(rgb(226, 38, 38), rgb(223, 57, 24));
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-shadow: 0.5px 0.5px 0 white,
+    -0.5px 0.5px 0 white,
+    0.5px -0.5px 0 white,
+    -0.5px -0.5px 0 white;
+
 }
 
+
+
 .card img{
-    height: 15rem;
+    height: 20rem;
     border-radius: 4rem 0.5rem;
 
 }
@@ -35,6 +41,9 @@
 .card:hover{
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: 
+    text-shadow: 1px 1px 0 white,
+    -1px 1px 0 white,
+    1px -1px 0 white,
+    -1px -1px 0 white;
 }
 
