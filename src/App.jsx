@@ -102,6 +102,12 @@ function App() {
     setCharacters(prevCharacters => shuffleArr(prevCharacters));
   }
 
+  function changeDifficulty() {
+    setLost(false);
+    setScore(0);
+    setCharacters(prevCharacters => shuffleArr(prevCharacters));
+    setDifficulty(null);
+  }
 
   useEffect(() => {
     if (difficulty) {
@@ -126,8 +132,8 @@ function App() {
         ))}
         
       </main>
-      {score === maxScore && <DisplayVictory playAgain={playAgain} />}
-      {lost && <DisplayLose playAgain={playAgain} />}
+      {score === maxScore && <DisplayVictory playAgain={playAgain} changeDifficulty={changeDifficulty}/>}
+      {lost && <DisplayLose playAgain={playAgain} changeDifficulty={changeDifficulty} />}
     </>
   )
 }
