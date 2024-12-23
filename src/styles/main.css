@@ -1,7 +1,7 @@
 .main-container{
 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     padding: 2rem;
     gap: 1rem;
     place-items: center;
@@ -12,12 +12,12 @@
 .card{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     box-sizing: border-box;
-    width: 15rem;
+    width: 11rem;
     border: 2px solid white;
     text-align: center;
-    padding: 0.5rem;
+
     padding-top: 1rem;
     border-radius: 4rem 0.5rem;
     
@@ -33,7 +33,7 @@
 
 
 .card img{
-    height: 20rem;
+    height: 14rem;
     border-radius: 4rem 0.5rem;
 
 }
@@ -41,9 +41,5 @@
 .card:hover{
     cursor: pointer;
     transform: scale(1.1);
-    text-shadow: 1px 1px 0 white,
-    -1px 1px 0 white,
-    1px -1px 0 white,
-    -1px -1px 0 white;
 }
 

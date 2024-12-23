@@ -1,6 +1,6 @@
 .victory-container{
     height: 20rem;
-    width: 30rem;
+    width: 40rem;
     color: white;
     font-size: 2rem;
     background-color: rgb(31, 31, 31);
@@ -15,5 +15,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px 2px rgb(255, 132, 0), 
+    -2px 2px 2px red,
+     2px -2px 2px red,
+    -2px -2px 2px rgb(255, 132, 0);
 }
 

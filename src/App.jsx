@@ -3,6 +3,7 @@ import Header from "./components/Header.jsx";
 import Card from "./components/Card.jsx";
 import DisplayVictory from "./components/Victory.jsx";
 import DisplayLose from "./components/Lose.jsx";
+import StartPage from "./components/StartPage.jsx";
 import "./styles/main.css";
 
 
@@ -18,13 +19,13 @@ function shuffleArr(arr) {
   return newArr;
 }
 
-
-
 function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [characters, setCharacters] = useState([]);
   const [lost, setLost] = useState(false);
+  const [difficulty, setDifficulty] = useState(null);
+  const [maxScore, setMaxScore] = useState(null);
   const characterIds = [1, 2, 3, 4, 5, 9, 36, 41, 88, 103, 127, 133, 224, 270, 271, 290];
 
 
@@ -65,7 +66,20 @@ function App() {
         throw new Error("Failed to fetch the data");
       }
       const responseData = await response.json();
-        const characterData = characterIds.map((id) => {
+      let selectedIds;
+      if (difficulty === "easy") {
+        selectedIds = characterIds.slice(0, 8);
+        setMaxScore(8);
+      } else if (difficulty === "medium") {
+        selectedIds = characterIds.slice(0, 12);
+        setMaxScore(12);
+      } else if(difficulty === "hard") {
+        selectedIds = characterIds;
+        setMaxScore(16);
+      } else {
+        return
+      }
+        const characterData = selectedIds.map((id) => {
           const character = responseData.data[id].character
           return {
               name: character.name.split(",").join(" "),
@@ -88,20 +102,31 @@ function App() {
     setCharacters(prevCharacters => shuffleArr(prevCharacters));
   }
 
+
   useEffect(() => {
-    getCharacters()
-  }, [])
-  
+    if (difficulty) {
+      getCharacters()
+    }
+  }, [difficulty])
+
+  if (!difficulty) {
+    return (
+      <>
+        <Header score={score} bestScore={bestScore} lost={lost} />
+        <StartPage setDifficulty={setDifficulty} />
+      </>
+    )
+  }
   return (
     <>
       <Header score={score} bestScore={bestScore} lost={lost} />
-      <main className={score === 16 || lost ? "main-container blured" : "main-container"}>
+      <main className={score === maxScore || lost ? "main-container blured" : "main-container"}>
         {characters.map((character, index) => (
-          <Card onClick={score === 16 || lost ? null : () => handleCardClick(character)} key={index}  character={character} />
+          <Card onClick={score === maxScore|| lost ? null : () => handleCardClick(character)} key={index}  character={character} />
         ))}
         
       </main>
-      {score === 16 && <DisplayVictory playAgain={playAgain} />}
+      {score === maxScore && <DisplayVictory playAgain={playAgain} />}
       {lost && <DisplayLose playAgain={playAgain} />}
     </>
   )

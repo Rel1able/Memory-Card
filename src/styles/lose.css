@@ -3,7 +3,7 @@
     width: 30rem;
     color: white;
     font-size: 2rem;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(29, 29, 29);
     padding: 2rem;
     padding-top: 0rem;
     position: absolute;
@@ -15,5 +15,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.lose-container h2{
+    font-family: Courier, monospace;
+    text-shadow: 1px 1px 1px gray;
 }
 
