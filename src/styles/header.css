@@ -9,14 +9,14 @@
 }
 
 .title-desc header{
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold; 
     color: rgb(255, 255, 255);
 }
 
 .title-desc p{
-    font-size: 1.4rem;
-    color: rgb(222, 221, 221);
+    font-size: 1rem;
+    color: rgb(194, 191, 191);
 }
 
 .score-board{
@@ -24,6 +24,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }

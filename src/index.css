@@ -31,3 +31,61 @@ body{
 
 }
 
+
+@media (max-width: 480px){
+    html{
+        font-size: 70%;
+    }
+    .main-container{
+        grid-template-columns: repeat(2, 1fr) !important;
+
+    }
+    .title-desc header{
+        font-size: 1.5rem !important;
+    }
+    .title-desc{
+        width: 50% !important;
+    }
+}
+@media (min-width: 481px) and (max-width: 1024px){
+    html{
+        font-size: 80%;
+    }
+    .main-container{
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    .title-desc header{
+        font-size: 1.7rem !important;
+    }
+    .title-desc{
+        width: 50% !important;
+        
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px){
+    html{
+        font-size: 90%;
+    }
+    .main-container{
+        grid-template-columns: repeat(6, 1fr) !important;
+        
+    }
+    .title-desc{
+        width: 50% !important;
+        
+    }
+}
+
+@media (min-width: 1441px){
+    html{
+        font-size: 100%;
+    }
+    .main-container{
+        grid-template-columns: repeat(8, 1fr) !important;
+
+    }
+
+}
+
+

@@ -1,4 +1,5 @@
 import "../styles/header.css";
+import "../index.css"
 
 export default function Header({ score, bestScore, lost, maxScore}) {
     return (

@@ -11,10 +11,10 @@
 
 .card{
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
     box-sizing: border-box;
-    max-height: 20rem;
-    width: 11rem;
+    width: 8.5rem;
+    height: 16rem;
     border: 2px solid white;
     text-align: center;
     padding: 1rem;
@@ -29,7 +29,7 @@
 
 
 .card img{
-    height: 14rem;
+    height: 10rem;
     border-radius: 4rem 0.5rem;
 
 }

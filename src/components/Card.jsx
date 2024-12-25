@@ -1,4 +1,5 @@
 import "../styles/main.css"
+import "../index.css"
 
 export default function Card({ character, onClick }) {
 
