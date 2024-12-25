@@ -1,8 +1,8 @@
 .main-container{
-
+    background-color: rgb(31, 31, 31);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding: 2rem;
+    padding: 3rem;
     gap: 1rem;
     place-items: center;
     
@@ -10,23 +10,19 @@
 }
 
 .card{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 1.2rem;
     box-sizing: border-box;
+    max-height: 20rem;
     width: 11rem;
     border: 2px solid white;
     text-align: center;
-
-    padding-top: 1rem;
+    padding: 1rem;
     border-radius: 4rem 0.5rem;
-    
-    background: linear-gradient(rgb(226, 38, 38), rgb(223, 57, 24));
+    color: white;
+    background-color: rgb(231, 44, 44);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    text-shadow: 0.5px 0.5px 0 white,
-    -0.5px 0.5px 0 white,
-    0.5px -0.5px 0 white,
-    -0.5px -0.5px 0 white;
+    
 
 }
 

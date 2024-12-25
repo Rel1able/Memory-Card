@@ -99,12 +99,14 @@ function App() {
   function playAgain() {
     setLost(false);
     setScore(0);
+    setCharacters(prevCharacters => prevCharacters.map(character => ({...character, clicked: false})))
     setCharacters(prevCharacters => shuffleArr(prevCharacters));
   }
 
   function changeDifficulty() {
     setLost(false);
     setScore(0);
+    setCharacters(prevCharacters => prevCharacters.map(character => ({...character, clicked: false})))
     setCharacters(prevCharacters => shuffleArr(prevCharacters));
     setDifficulty(null);
   }
@@ -118,14 +120,14 @@ function App() {
   if (!difficulty) {
     return (
       <>
-        <Header score={score} bestScore={bestScore} lost={lost} />
+        <Header score={score} bestScore={bestScore} lost={lost} maxScore={maxScore} />
         <StartPage setDifficulty={setDifficulty} />
       </>
     )
   }
   return (
     <>
-      <Header score={score} bestScore={bestScore} lost={lost} />
+      <Header score={score} bestScore={bestScore} lost={lost} maxScore={maxScore} />
       <main className={score === maxScore || lost ? "main-container blured" : "main-container"}>
         {characters.map((character, index) => (
           <Card onClick={score === maxScore|| lost ? null : () => handleCardClick(character)} key={index}  character={character} />

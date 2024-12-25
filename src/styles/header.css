@@ -3,7 +3,7 @@
     justify-content: space-around;
     padding: 2rem;
     background-color: rgb(25, 25, 25);
-    color: rgb(228, 104, 104);
+    color: rgb(255, 255, 255);
 
 
 }
@@ -11,16 +11,12 @@
 .title-desc header{
     font-size: 4rem;
     font-weight: bold; 
-    color: rgb(226, 38, 38);
-    text-shadow: 1px 1px 0 white,
-    -1px 1px 0 white,
-    1px -1px 0 white,
-    -1px -1px 0 white;
+    color: rgb(255, 255, 255);
 }
 
 .title-desc p{
-    font-size: 1.3rem;
-
+    font-size: 1.4rem;
+    color: rgb(222, 221, 221);
 }
 
 .score-board{
@@ -28,6 +24,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
 }

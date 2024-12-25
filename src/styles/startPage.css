@@ -18,12 +18,9 @@
     padding: 1rem 2rem;
     font-size: 2rem;
     border-radius: 2rem;
-    background-color: rgb(255, 54, 54);
+    color: white;
+    background-color: rgb(231, 44, 44);
     font-weight: bold;
-    box-shadow: 2px 2px 0 rgb(57, 57, 57),
-    2px -2px 0 rgb(57, 57, 57),
-    -2px 2px 0 rgb(57, 57, 57),
-    -2px -2px 0 rgb(57, 57, 57);
     transition: 0.3s ease transform;
     cursor: pointer;
 }

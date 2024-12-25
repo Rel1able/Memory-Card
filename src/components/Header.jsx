@@ -1,9 +1,9 @@
 import "../styles/header.css";
 
-export default function Header({ score, bestScore, lost }) {
+export default function Header({ score, bestScore, lost, maxScore}) {
     return (
         <>
-            <div className={score === 16 || lost ? "header-container blured" : "header-container"}>
+            <div className={score === maxScore || lost ? "header-container blured" : "header-container"}>
                 <div className="title-desc">
                     <header>Bleach Memory Game</header>
                     <p>Get points by clicking on an image but don't click on any more than once!</p>

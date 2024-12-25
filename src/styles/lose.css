@@ -4,7 +4,7 @@
     color: white;
     font-size: 2rem;
     background-color: rgb(29, 29, 29);
-    padding: 2rem;
+    padding: 3rem;
     padding-top: 0rem;
     position: absolute;
     top: 50%;
@@ -18,7 +18,14 @@
 }
 
 .lose-container h2{
-    font-family: Courier, monospace;
     text-shadow: 1px 1px 1px gray;
 }
 
+
+.end-game-buttons{
+    display: flex;
+    gap: 1rem;
+}
+.end-game-buttons button{
+    width: 15rem;
+}
